@@ -6,73 +6,77 @@ public class ChessBoard {
 
     public ChessBoard() {
         board = new Piece[8][8];
+        setStartBoard();
+    }
+
+    private void setStartBoard() {
         for (int i = 0; i < 8; i++) {
             Piece pawn = new Piece("Pawn", "white");
-            placePiece(pawn, 1, i);
+            setPiece(pawn, 1, i);
         }
         for (int i = 0; i < 8; i++) {
             Piece pawn = new Piece("Pawn", "black");
-            placePiece(pawn, 6, i);
+            setPiece(pawn, 6, i);
         }
         for (int i = 0; i < 2; i++) {
             Piece knight = new Piece("Knight", "white");
             if(i == 0){
-                placePiece(knight, 0, 1);
+                setPiece(knight, 0, 1);
             } else {
-                placePiece(knight, 0, 6);
+                setPiece(knight, 0, 6);
             }
         }
         for (int i = 0; i < 2; i++) {
             Piece knight = new Piece("Knight", "black");
             if(i == 0){
-                placePiece(knight, 7, 1);
+                setPiece(knight, 7, 1);
             } else {
-                placePiece(knight, 7, 6);
+                setPiece(knight, 7, 6);
             }
         }
         for (int i = 0; i < 2; i++) {
             Piece rook = new Piece("Rook", "white");
             if(i == 0){
-                placePiece(rook, 0, 0);
+                setPiece(rook, 0, 0);
             } else {
-                placePiece(rook, 0, 7);
+                setPiece(rook, 0, 7);
             }
         }
         for (int i = 0; i < 2; i++) {
             Piece rook = new Piece("Rook", "black");
             if(i == 0){
-                placePiece(rook, 7, 0);
+                setPiece(rook, 7, 0);
             } else {
-                placePiece(rook, 7, 7);
+                setPiece(rook, 7, 7);
             }
         }
         for (int i = 0; i < 2; i++) {
             Piece bishop = new Piece("Bishop", "white");
             if(i == 0){
-                placePiece(bishop, 0, 2);
+                setPiece(bishop, 0, 2);
             } else {
-                placePiece(bishop, 0, 5);
+                setPiece(bishop, 0, 5);
             }
         }
         for (int i = 0; i < 2; i++) {
             Piece bishop = new Piece("Bishop", "black");
             if(i == 0){
-                placePiece(bishop, 7, 2);
+                setPiece(bishop, 7, 2);
             } else {
-                placePiece(bishop, 7, 5);
+                setPiece(bishop, 7, 5);
             }
         }
         Piece king = new Piece("King", "white");
-        placePiece(king, 0, 3);
+        setPiece(king, 0, 3);
         Piece queen = new Piece("Queen", "white");
-        placePiece(queen, 0, 4);
+        setPiece(queen, 0, 4);
         Piece king2 = new Piece("King", "black");
-        placePiece(king2, 7, 3);
+        setPiece(king2, 7, 3);
         Piece queen2 = new Piece("Queen", "black");
-        placePiece(queen2, 7, 4);
+        setPiece(queen2, 7, 4);
     }
 
-    public void placePiece(Piece piece, int row, int col) {
+    public void setPiece(Piece piece, int row, int col) {
         if (row >= 0 && row < 8 && col >= 0 && col < 8) {
             board[row][col] = piece;
         }
@@ -100,10 +104,15 @@ public class ChessBoard {
     public void move(int fromRow, int fromColumn, int toRow, int toColumn){
             if(canMove(fromRow, fromColumn, toRow, toColumn)){
                 Piece piece = getPiece(fromRow, fromColumn);
-                placePiece(piece, toRow, toColumn);
+                setPiece(piece, toRow, toColumn);
                 removePiece(fromRow, fromColumn);
             }
     }
+
+    public void resetBoard(){
+        setStartBoard();
+    }
+
 //            switch(getPiece(fromRow, fromColumn).getName()){
 //                case "Pawn":
 //
@@ -124,8 +133,4 @@ public class ChessBoard {
 //        }
 //        return false;
 
-
-//    public void resetBoard(){
-//
-//    }
 }

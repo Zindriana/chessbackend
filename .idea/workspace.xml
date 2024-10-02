@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d3f2d3e-5ddc-4418-bfc4-07b28d60eb70" name="Changes" comment="loop for creating pieces and place them on the board">
+    <list default="true" id="8d3f2d3e-5ddc-4418-bfc4-07b28d60eb70" name="Changes" comment="Created some new test for moving a piece and then created the move-method and created a remove-method in ChessBoard class.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ChessBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ChessBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/ChessBoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/ChessBoardTest.java" afterDir="false" />
@@ -45,6 +45,9 @@
   <component name="MacroExpansionManager">
     <option name="directoryName" value="13wwob8a" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -59,9 +62,12 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "JUnit.ChessBoardTest.executor": "Run",
+    "JUnit.ChessBoardTest.testCanMove.executor": "Run",
     "JUnit.ChessBoardTest.testChessBoard.executor": "Run",
     "JUnit.ChessBoardTest.testGetPiece.executor": "Run",
     "JUnit.ChessBoardTest.testMove.executor": "Run",
+    "JUnit.ChessBoardTest.testRemovePiece.executor": "Run",
+    "JUnit.ChessBoardTest.testResetBoard.executor": "Run",
     "JUnit.ChessBoardTest.testSetPiece.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -87,7 +93,22 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ChessBoardTest.testMove">
+  <component name="RunManager" selected="JUnit.ChessBoardTest.testResetBoard">
+    <configuration name="ChessBoardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="chessBackend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.ChessBoardTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ChessBoardTest.testCanMove" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="chessBackend" />
       <extension name="coverage">
@@ -99,22 +120,6 @@
       <option name="PACKAGE_NAME" value="org.example" />
       <option name="MAIN_CLASS_NAME" value="org.example.ChessBoardTest" />
       <option name="METHOD_NAME" value="testCanMove" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ChessBoardTest.testChessBoard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="chessBackend" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example" />
-      <option name="MAIN_CLASS_NAME" value="org.example.ChessBoardTest" />
-      <option name="METHOD_NAME" value="testChessBoard" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -136,7 +141,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ChessBoardTest.testMove" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ChessBoardTest.testRemovePiece" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="chessBackend" />
       <extension name="coverage">
         <pattern>
@@ -146,13 +151,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.example" />
       <option name="MAIN_CLASS_NAME" value="org.example.ChessBoardTest" />
-      <option name="METHOD_NAME" value="testMove" />
+      <option name="METHOD_NAME" value="testRemovePiece" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ChessBoardTest.testSetPiece" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ChessBoardTest.testResetBoard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="chessBackend" />
       <extension name="coverage">
         <pattern>
@@ -162,7 +167,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.example" />
       <option name="MAIN_CLASS_NAME" value="org.example.ChessBoardTest" />
-      <option name="METHOD_NAME" value="testSetPiece" />
+      <option name="METHOD_NAME" value="testResetBoard" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -170,11 +175,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ChessBoardTest.testMove" />
-        <item itemvalue="JUnit.ChessBoardTest.testCanMove" />
+        <item itemvalue="JUnit.ChessBoardTest.testResetBoard" />
+        <item itemvalue="JUnit.ChessBoardTest" />
         <item itemvalue="JUnit.ChessBoardTest.testGetPiece" />
-        <item itemvalue="JUnit.ChessBoardTest.testSetPiece" />
-        <item itemvalue="JUnit.ChessBoardTest.testChessBoard" />
+        <item itemvalue="JUnit.ChessBoardTest.testCanMove" />
+        <item itemvalue="JUnit.ChessBoardTest.testRemovePiece" />
       </list>
     </recent_temporary>
   </component>
@@ -195,7 +200,7 @@
       <option name="presentableId" value="Default" />
       <updated>1727782024080</updated>
       <workItem from="1727782025091" duration="9466000" />
-      <workItem from="1727859694783" duration="3284000" />
+      <workItem from="1727859694783" duration="7159000" />
     </task>
     <task id="LOCAL−00001" summary="created repository">
       <option name="closed" value="true" />
@@ -218,7 +223,14 @@
       <option name="presentableId" value="LOCAL−00003" />
       <updated>1727786072330</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL−00004" summary="Created some new test for moving a piece and then created the move-method and created a remove-method in ChessBoard class.">
+      <option name="closed" value="true" />
+      <created>1727871087268</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1727871087268</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,6 +262,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="created repository" />
     <MESSAGE value="loop for creating pieces and place them on the board" />
-    <option name="LAST_COMMIT_MESSAGE" value="loop for creating pieces and place them on the board" />
+    <MESSAGE value="Created some new test for moving a piece and then created the move-method and created a remove-method in ChessBoard class." />
+    <option name="LAST_COMMIT_MESSAGE" value="Created some new test for moving a piece and then created the move-method and created a remove-method in ChessBoard class." />
   </component>
 </project>
