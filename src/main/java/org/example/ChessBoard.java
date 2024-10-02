@@ -2,7 +2,7 @@ package org.example;
 
 public class ChessBoard {
 
-    private Piece[][] board;
+    private final Piece[][] board;
 
     public ChessBoard() {
         board = new Piece[8][8];
@@ -85,17 +85,24 @@ public class ChessBoard {
         return null;
     }
 
+    public void removePiece(int row, int column) {
+        board[row][column] = null;
+    }
+
     public boolean canMove(int fromRow, int fromColumn, int toRow, int toColumn){
         if(getPiece(fromRow, fromColumn)!=null ){
             if(getPiece(toRow, toColumn)==null){
                 return true;
-            } else if(getPiece(fromRow, fromColumn).getColor().equals(getPiece(toRow, toColumn).getColor())){
-                return false;
-            } else {
-                return true;
-            }
-
+            } else return !getPiece(fromRow, fromColumn).getColor().equals(getPiece(toRow, toColumn).getColor());
         } return false;
+    }
+
+    public void move(int fromRow, int fromColumn, int toRow, int toColumn){
+            if(canMove(fromRow, fromColumn, toRow, toColumn)){
+                Piece piece = getPiece(fromRow, fromColumn);
+                placePiece(piece, toRow, toColumn);
+                removePiece(fromRow, fromColumn);
+            }
     }
 //            switch(getPiece(fromRow, fromColumn).getName()){
 //                case "Pawn":
@@ -118,7 +125,7 @@ public class ChessBoard {
 //        return false;
 
 
-    public void resetBoard(){
-
-    }
+//    public void resetBoard(){
+//
+//    }
 }

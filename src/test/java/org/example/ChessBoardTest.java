@@ -38,7 +38,7 @@ class ChessBoardTest {
         }
 
         @Test
-        void testMove(){
+        void testCanMove(){
             boolean move1 = board.canMove(0,0, 3,3);
             boolean move2 = board.canMove(1,0, 1,2);
             boolean move3 = board.canMove(3,3, 5,5);
@@ -51,4 +51,19 @@ class ChessBoardTest {
                 assertTrue(move5);
         }
 
+        @Test
+        void testMove(){
+            //given
+
+
+            //when
+            board.move(1,3, 2,3);
+            board.move(0,1, 2,3);
+
+            //then
+            assertEquals("Pawn", board.getPiece(2, 3).getName());
+            assertNull(board.getPiece(1, 3));
+            assertEquals("Knight", board.getPiece(0, 1).getName());
+
+        }
 }
