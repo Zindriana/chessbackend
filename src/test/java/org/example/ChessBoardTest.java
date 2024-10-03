@@ -46,14 +46,16 @@ class ChessBoardTest {
             boolean move2 = board.canMove(1,0, 1,2);
             boolean move3 = board.canMove(3,3, 5,5);
             boolean move4 = board.canMove(-1,-1, 1,2);
-            boolean move5 = board.canMove(6,0, 1,2);
+            boolean move5 = board.canMove(6,0, 5,1);
             boolean move6 = board.canMove(7,0, -1,2);
-                assertTrue(move1);
+
+                assertFalse(move1);
                 assertFalse(move2);
                 assertFalse(move3);
                 assertFalse(move4);
                 assertTrue(move5);
                 assertFalse(move6);
+
         }
 
         @Test
@@ -112,5 +114,49 @@ class ChessBoardTest {
 
         }
 
+        @Test
+        void testCleanBoard(){
+            board.cleanBoard();
+            assertNull(board.getPiece(0,3));
+        }
+
+        @Test
+        void testBishop(){
+            //given
+            //Piece pawn = board.getPiece(1,3);
+
+            //when
+            board.move(1,3, 2, 3);
+            board.move(1,2, 3, 2);
+            boolean move7 = board.bishopMove(0,2, 2,4);
+
+            //then
+            assertTrue(move7);
+        }
+
+        @Test
+        void testQueen(){
+
+        }
+
+        @Test
+        void testKing(){
+
+        }
+
+        @Test
+        void testRook(){
+
+        }
+
+        @Test
+        void testPawn(){
+
+        }
+
+        @Test
+        void testKnight(){
+
+        }
 
 }

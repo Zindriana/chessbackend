@@ -94,37 +94,39 @@ public class ChessBoard {
     }
 
     public boolean canMove(int fromRow, int fromColumn, int toRow, int toColumn){
-        if(getPiece(fromRow, fromColumn)!=null && isRowEmpty(fromRow, toRow, fromColumn) && isColumnEmpty(fromColumn, toColumn, fromRow)){
+        if(getPiece(fromRow, fromColumn)!=null && isLineEmpty(fromRow, toRow, fromColumn) && isLineEmpty(fromColumn, toColumn, fromRow)){
             if(getPiece(toRow, toColumn)==null){
                 return true;
             } else return !getPiece(fromRow, fromColumn).getColor().equals(getPiece(toRow, toColumn).getColor());
         } return false;
     }
 
-    private boolean isRowEmpty(int fromRow, int toRow, int fromColumn) {
-        int maxRow = Math.max(fromRow, toRow);
-        int minRow = Math.min(fromRow, toRow);
+    private boolean isLineEmpty(int fromX, int toY, int z) { //if X&Y is row, then z should be column and vice verse
+        int maxLine = Math.max(fromX, toY);
+        int minLine = Math.min(fromX, toY);
         for (int i = 0; i < 8; i++) {
-            if (i > minRow && i < maxRow) {
-                if (getPiece(i, fromColumn) != null) {
+            if (i > minLine && i < maxLine) {
+                if (getPiece(i, z) != null) {
                     return false;
                 }
             }
         }return true;
     }
 
-    private boolean isColumnEmpty(int fromColumn, int toColumn, int fromRow) {
-        int maxColumn = Math.max(fromColumn, toColumn);
-        int minColumn = Math.min(fromColumn, toColumn);
-        for (int i = 0; i < 8; i++) {
-            if (i > minColumn && i < maxColumn) {
-                if (getPiece(i, fromRow) != null) {
+    public boolean bishopMove(int fromRow, int fromColumn, int toRow, int toColumn){
+        if(canMove(fromRow, fromColumn, toRow, toColumn)) {
+            for (int i = fromRow; i < toRow; i++) {
+                if (getPiece(fromRow + 1, fromColumn + 1) != null) {
                     return false;
                 }
             }
-        }return true;
+            return true;
+        }
+        return false;
     }
 
+//    for(int i = -1; i <= 1; i++) {  // loop för att kolla row -1, 0, 1 (raden över, samma rad och raden nedanför)
+//        for(int j = -1; j <= 1; j++) { // loop för att kolla col -1, 0, 1 (kolumnen vänster, samma koulmn och kolumnen höger)
 
     public boolean move(int fromRow, int fromColumn, int toRow, int toColumn){
             if(canMove(fromRow, fromColumn, toRow, toColumn)){
@@ -139,6 +141,14 @@ public class ChessBoard {
 
     public void resetBoard(){
         setStartBoard();
+    }
+
+    public void cleanBoard(){
+        for( int i = 0; i< board.length; i++ ){
+            for( int j = 0; j< board.length; j++ ){
+                board[i][j] = null;
+            }
+        }
     }
 
 //            switch(getPiece(fromRow, fromColumn).getName()){
