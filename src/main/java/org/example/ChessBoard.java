@@ -94,18 +94,46 @@ public class ChessBoard {
     }
 
     public boolean canMove(int fromRow, int fromColumn, int toRow, int toColumn){
-        if(getPiece(fromRow, fromColumn)!=null ){
+        if(getPiece(fromRow, fromColumn)!=null && isRowEmpty(fromRow, toRow, fromColumn) && isColumnEmpty(fromColumn, toColumn, fromRow)){
             if(getPiece(toRow, toColumn)==null){
                 return true;
             } else return !getPiece(fromRow, fromColumn).getColor().equals(getPiece(toRow, toColumn).getColor());
         } return false;
     }
 
-    public void move(int fromRow, int fromColumn, int toRow, int toColumn){
+    private boolean isRowEmpty(int fromRow, int toRow, int fromColumn) {
+        int maxRow = Math.max(fromRow, toRow);
+        int minRow = Math.min(fromRow, toRow);
+        for (int i = 0; i < 8; i++) {
+            if (i > minRow && i < maxRow) {
+                if (getPiece(i, fromColumn) != null) {
+                    return false;
+                }
+            }
+        }return true;
+    }
+
+    private boolean isColumnEmpty(int fromColumn, int toColumn, int fromRow) {
+        int maxColumn = Math.max(fromColumn, toColumn);
+        int minColumn = Math.min(fromColumn, toColumn);
+        for (int i = 0; i < 8; i++) {
+            if (i > minColumn && i < maxColumn) {
+                if (getPiece(i, fromRow) != null) {
+                    return false;
+                }
+            }
+        }return true;
+    }
+
+
+    public boolean move(int fromRow, int fromColumn, int toRow, int toColumn){
             if(canMove(fromRow, fromColumn, toRow, toColumn)){
                 Piece piece = getPiece(fromRow, fromColumn);
                 setPiece(piece, toRow, toColumn);
                 removePiece(fromRow, fromColumn);
+                return true;
+            } else {
+                return false;
             }
     }
 
