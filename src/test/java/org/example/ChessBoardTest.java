@@ -136,7 +136,17 @@ class ChessBoardTest {
 
         @Test
         void testQueen(){
+            //given
+            Piece queen = board.getPiece(0,4);
 
+            //when
+            board.move(0, 4, 0, 4);
+
+            //then
+            assertEquals(queen.getName(), board.getPiece(0,4).getName());
+
+            board.move(0, 4, 0, 5);
+            assertEquals(queen.getName(), board.getPiece(0,4).getName());
         }
 
         @Test

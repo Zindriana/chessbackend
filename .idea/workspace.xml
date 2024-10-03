@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8d3f2d3e-5ddc-4418-bfc4-07b28d60eb70" name="Changes" comment="refactored isRowEmpty() &amp; isColumnEmpty() into only one method, isLineEmpty()">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ChessBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ChessBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/ChessBoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/ChessBoardTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,6 +67,7 @@
     "JUnit.ChessBoardTest.testCleanBoard.executor": "Run",
     "JUnit.ChessBoardTest.testGetPiece.executor": "Run",
     "JUnit.ChessBoardTest.testMove.executor": "Run",
+    "JUnit.ChessBoardTest.testQueen.executor": "Run",
     "JUnit.ChessBoardTest.testRemovePiece.executor": "Run",
     "JUnit.ChessBoardTest.testResetBoard.executor": "Run",
     "JUnit.ChessBoardTest.testSetPiece.executor": "Run",
@@ -96,7 +96,7 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ChessBoardTest.testCleanBoard">
+  <component name="RunManager" selected="JUnit.ChessBoardTest.testQueen">
     <configuration name="ChessBoardTest.testBishop" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="chessBackend" />
       <extension name="coverage">
@@ -145,7 +145,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ChessBoardTest.testMove" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ChessBoardTest.testQueen" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="chessBackend" />
       <extension name="coverage">
         <pattern>
@@ -155,7 +155,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.example" />
       <option name="MAIN_CLASS_NAME" value="org.example.ChessBoardTest" />
-      <option name="METHOD_NAME" value="testMove" />
+      <option name="METHOD_NAME" value="testQueen" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -179,11 +179,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ChessBoardTest.testQueen" />
         <item itemvalue="JUnit.ChessBoardTest.testCleanBoard" />
         <item itemvalue="JUnit.ChessBoardTest.testSquare" />
         <item itemvalue="JUnit.ChessBoardTest.testBishop" />
         <item itemvalue="JUnit.ChessBoardTest.testCanMove" />
-        <item itemvalue="JUnit.ChessBoardTest.testMove" />
       </list>
     </recent_temporary>
   </component>
@@ -206,7 +206,7 @@
       <workItem from="1727782025091" duration="9466000" />
       <workItem from="1727859694783" duration="7159000" />
       <workItem from="1727939064695" duration="999000" />
-      <workItem from="1727940111874" duration="12392000" />
+      <workItem from="1727940111874" duration="13567000" />
     </task>
     <task id="LOCAL−00001" summary="created repository">
       <option name="closed" value="true" />
@@ -243,7 +243,14 @@
       <option name="presentableId" value="LOCAL−00005" />
       <updated>1727949030908</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL−00006" summary="refactored isRowEmpty() &amp; isColumnEmpty() into only one method, isLineEmpty()">
+      <option name="closed" value="true" />
+      <created>1727959922495</created>
+      <option name="number" value="LOCAL−00006" />
+      <option name="presentableId" value="LOCAL−00006" />
+      <updated>1727959922495</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
