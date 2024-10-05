@@ -58,36 +58,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JUnit.ChessBoardTest.executor": "Run",
-    "JUnit.ChessBoardTest.testBishop.executor": "Run",
-    "JUnit.ChessBoardTest.testCanMove.executor": "Run",
-    "JUnit.ChessBoardTest.testChessBoard.executor": "Run",
-    "JUnit.ChessBoardTest.testCleanBoard.executor": "Run",
-    "JUnit.ChessBoardTest.testGetPiece.executor": "Run",
-    "JUnit.ChessBoardTest.testMove.executor": "Run",
-    "JUnit.ChessBoardTest.testQueen.executor": "Run",
-    "JUnit.ChessBoardTest.testRemovePiece.executor": "Run",
-    "JUnit.ChessBoardTest.testResetBoard.executor": "Run",
-    "JUnit.ChessBoardTest.testSetPiece.executor": "Run",
-    "JUnit.ChessBoardTest.testSquare.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "Anja",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/rtgbv/Desktop/Scriptomancy/mu23/cdci/chessBackend/src/main/java/org/example/Main.java",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.ChessBoardTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ChessBoardTest.testBishop.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ChessBoardTest.testCanMove.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ChessBoardTest.testChessBoard.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ChessBoardTest.testCleanBoard.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ChessBoardTest.testGetPiece.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ChessBoardTest.testMove.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ChessBoardTest.testQueen.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ChessBoardTest.testRemovePiece.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ChessBoardTest.testResetBoard.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ChessBoardTest.testSetPiece.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ChessBoardTest.testSquare.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Anja&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/rtgbv/Desktop/Scriptomancy/mu23/cdci/chessBackend/src/main/java/org/example/Main.java&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -207,6 +207,7 @@
       <workItem from="1727859694783" duration="7159000" />
       <workItem from="1727939064695" duration="999000" />
       <workItem from="1727940111874" duration="13567000" />
+      <workItem from="1728047510610" duration="1182000" />
     </task>
     <task id="LOCAL−00001" summary="created repository">
       <option name="closed" value="true" />

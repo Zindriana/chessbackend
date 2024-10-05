@@ -136,17 +136,27 @@ class ChessBoardTest {
 
         @Test
         void testQueen(){
-            //given
-            Piece queen = board.getPiece(0,4);
 
-            //when
-            board.move(0, 4, 0, 4);
+            //only a draft, this only test moving between rows at the moment
+            board.cleanBoard();
+            //given
+
+            Piece bQueen = new Piece("Queen", "black");
+            board.setPiece(bQueen, 4, 4);
+            Piece wRook = new Piece("Rook", "white");
+            board.setPiece(wRook, 6, 4);
+            Piece bKnight = new Piece("Knight", "black");
+            board.setPiece(bKnight, 2, 4);
+            Piece wKnight = new Piece("Knight", "white");
+            board.setPiece(wKnight, 7, 4);
 
             //then
-            assertEquals(queen.getName(), board.getPiece(0,4).getName());
+            assertFalse(board.move(4, 4, 2, 4));
+            assertFalse(board.move(4, 4, 1, 4));
+            assertTrue(board.move(4, 4, 3, 4));
+            assertFalse(board.move(3, 4, 7, 4));
+            assertTrue(board.move(3, 4, 6, 4));
 
-            board.move(0, 4, 0, 5);
-            assertEquals(queen.getName(), board.getPiece(0,4).getName());
         }
 
         @Test
@@ -157,6 +167,25 @@ class ChessBoardTest {
         @Test
         void testRook(){
 
+            //TODO, add tests for moving to a different row
+            board.cleanBoard();
+            //given
+
+            Piece bRook = new Piece("bRook", "black");
+            board.setPiece(bRook, 4, 4);
+            Piece wRook = new Piece("wRook", "white");
+            board.setPiece(wRook, 6, 4);
+            Piece bKnight = new Piece("Knight", "black");
+            board.setPiece(bKnight, 2, 4);
+            Piece wKnight = new Piece("Knight", "white");
+            board.setPiece(wKnight, 7, 4);
+
+            //then
+            assertFalse(board.move(4, 4, 2, 4)); //bRook tries to move to the same square as bKnight
+            assertFalse(board.move(4, 4, 1, 4)); //bRook tries to move to a square behind as bKnight
+            assertTrue(board.move(4, 4, 3, 4)); //bRook moves to a adjacent empty square
+            assertFalse(board.move(3, 4, 7, 4)); //bRook tries to move t oa square behind wKnight
+            assertTrue(board.move(3, 4, 6, 4)); //bRook captures wRook
         }
 
         @Test
